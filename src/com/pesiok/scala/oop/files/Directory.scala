@@ -1,5 +1,7 @@
 package com.pesiok.scala.oop.files
 
+import com.pesiok.scala.oop.filesystem.FileSystemException
+
 import scala.annotation.tailrec
 
 class Directory(
@@ -41,6 +43,7 @@ class Directory(
     new Directory(parentPath, name, contents.filter(e => !e.name.equals((entryName))) :+ newEntry)
 
   def asDirectory: Directory = this
+  def asFile: File = throw new FileSystemException("Directory cannot be converted to the file")
   def getType: String = "Directory"
 }
 

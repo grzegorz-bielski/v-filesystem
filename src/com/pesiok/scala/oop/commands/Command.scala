@@ -30,7 +30,10 @@ object Command {
         else new Mkdir(tokens(1))
       }
 
+      case Pwd.cmd => new Pwd
+
       case Ls.cmd => new Ls
+      case Touch.cmd => new Touch(tokens(1))
 
       case _ => new UnknownCommand
     }
