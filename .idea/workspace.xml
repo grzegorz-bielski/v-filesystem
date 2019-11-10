@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4de28603-1a30-4a61-bb67-bd35675e346d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/commands/CreateEntry.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/commands/Pwd.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/commands/Touch.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/files/File.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/filesystem/FileSystemException.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pesiok/scala/oop/commands/Command.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/commands/Command.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pesiok/scala/oop/commands/Mkdir.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/commands/Mkdir.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pesiok/scala/oop/files/DirEntry.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/files/DirEntry.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/pesiok/scala/oop/files/Directory.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/files/Directory.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/pesiok/scala/oop/filesystem/Filesystem.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/pesiok/scala/oop/filesystem/Filesystem.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

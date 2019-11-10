@@ -1,6 +1,6 @@
 package com.pesiok.scala.oop.files
 
-import com.pesiok.scala.oop.filesystem.FileSystemException
+import com.pesiok.scala.oop.filesystem.{FileSystemException, State}
 
 import scala.annotation.tailrec
 
@@ -19,6 +19,12 @@ class Directory(
       .toList
       .filter(e => !e.isEmpty)
 
+  def getAbsolutePath(dir: String): String = {
+    if (dir.startsWith(Directory.SEPARATOR)) dir
+    else if (isRoot) path + dir
+    else path + Directory.SEPARATOR + dir
+  }
+
   def findDescendant(path: List[String]): Directory = {
     if (path.isEmpty) this
     else findEntry(path.head)
@@ -26,8 +32,18 @@ class Directory(
             .findDescendant(path.tail)
   }
 
+  def findDescendant(path: String): Directory = {
+    if (path.isEmpty) this
+    else findDescendant(path.split(Directory.SEPARATOR).toList)
+  }
+
   def addEntry(newEntry: DirEntry): Directory =
     new Directory(parentPath, name, contents :+ newEntry)
+
+  def removeEntry(entry: String): Directory = {
+    if (!hasEntry(entry)) this
+    else new Directory(parentPath, name, contents.filter((x => !x.name.equals((entry)))))
+  }
 
   def findEntry(entryName: String): DirEntry = {
     @tailrec
@@ -42,7 +58,10 @@ class Directory(
   def replaceEntry(entryName: String, newEntry: DirEntry): Directory =
     new Directory(parentPath, name, contents.filter(e => !e.name.equals((entryName))) :+ newEntry)
 
+  def isRoot: Boolean = parentPath.isEmpty
   def asDirectory: Directory = this
+  override def isDirectory: Boolean = true
+  override def isFile: Boolean = false
   def asFile: File = throw new FileSystemException("Directory cannot be converted to the file")
   def getType: String = "Directory"
 }

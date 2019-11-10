@@ -2,7 +2,7 @@ package com.pesiok.scala.oop.commands
 
 import com.pesiok.scala.oop.filesystem.State
 
-trait Command {
+trait Command extends (State => State) {
   def apply(state: State): State
 }
 
@@ -29,13 +29,16 @@ object Command {
         if (tokens.length < 2) incompleteCommand(Mkdir.cmd)
         else new Mkdir(tokens(1))
       }
-
       case Pwd.cmd => new Pwd
-
       case Ls.cmd => new Ls
       case Touch.cmd => new Touch(tokens(1))
+      case Cd.cmd => new Cd(tokens(1))
+      case Rm.cmd => new Rm(tokens(1))
+      case Echo.cmd => new Echo(tokens.tail)
+      case Cat.cmd => new Cat(tokens(1))
 
       case _ => new UnknownCommand
     }
   }
+
 }

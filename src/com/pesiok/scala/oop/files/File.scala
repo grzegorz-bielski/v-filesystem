@@ -13,7 +13,17 @@ class File(
 
   def asFile = this
 
+  override def isDirectory: Boolean = false
+
+  override def isFile: Boolean = true
+
   def getType: String = "File"
+
+  def setContents(newConents: String): File =
+    new File(parentPath, name, newConents)
+
+  def appendContents(newContents: String): File =
+    setContents(contents + "\n" + newContents)
 
 }
 
